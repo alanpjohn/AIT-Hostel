@@ -1,0 +1,81 @@
+<!DOCTYPE HTML5>
+<html>
+<head>
+  <title>E-WARDEN</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+
+  <header id="header">
+  				<div class="inner">
+  					<a href="index.html" class="logo"><strong>E-warden</strong> by AIT</a>
+
+  					<a href="#navPanel" class="navPanelToggle"></a>
+  				</div>
+  			</header>
+
+
+<section id="banner">
+<div class="inner">
+      <header><h1>Login</h1></header>
+  <div class="flex">
+    <div>
+            <h3>About</h3>
+            <p>The e-warden application is <br>
+              a hostel management software <br>
+              designed to provide a transparent <br>
+              and effecient system for all
+            </p>
+    </div>
+    <div id="login_div">
+      <input type="email" placeholder="Email..." id="email_field" />
+      <input type="password" placeholder="Password..." id="password_field" />
+
+      <button onclick="login()">Login to Account</button>
+
+    </div>
+
+    <div id="user_div">
+      <center>
+      <h3>Welcome User</h3>
+      <p id="user_para">Welcome to Firebase web login Example. You're currently logged in.</p>
+        </center>
+          <button onclick="logout()" class="special">Logout</button>
+    </div>
+    <div>
+							<h3>Notice</h3>
+							<p>for first time students users <br>
+                  click on the below link and<br>
+                  send a verification request<br>
+                  then meet your warden who will<br>
+                  and activate your account<br><br>
+                  <a href="signup.html">Sign up</a>
+              </p>
+    </div>
+  </div>
+</div>
+</section>
+
+
+
+
+
+  <!--script--->
+  <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDaK25xpUvBhL_k5Wa_MTiXEY85FmxzAqo",
+      authDomain: "ait-hostel.firebaseapp.com",
+      databaseURL: "https://ait-hostel.firebaseio.com",
+      projectId: "ait-hostel",
+      storageBucket: "ait-hostel.appspot.com",
+      messagingSenderId: "127362585132"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="index.js"></script>
+
+</body>
+</html>
