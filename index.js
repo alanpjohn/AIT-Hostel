@@ -1,9 +1,22 @@
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
-
+    var d = new Date();
+    var h = d.getHours();
+    console.log(h);
+    if(h >= 4 && h <12){
+      document.getElementById("greeting").innerHTML="Good Morning";
+    }else if(h >= 12 && h <16){
+      document.getElementById("greeting").innerHTML="Good Afternoon";
+    }else{
+      document.getElementById("greeting").innerHTML="Good Evening";
+    }
     document.getElementById("user_div").style.display = "block";
     document.getElementById("login_div").style.display = "none";
+    document.getElementById("nav").style.display = "block";
+    document.getElementById("word").style.display = "block";
+    document.getElementById("notice").style.display = "none";
+
 
     var user = firebase.auth().currentUser;
     var firebasedb = firebase.database();
@@ -12,9 +25,16 @@ firebase.auth().onAuthStateChanged(function(user) {
       var email_id = user.email;
       var uid = user.uid;
       //writeUserData(uid,"Alan",email_id);
+     firebasedb.ref(`/users/`+uid).on("value", function(snapshot) {
+        console.log(snapshot.val());
+        var name = snapshot.val().username;
+        document.getElementById("user_para").innerHTML = "Hi, " + name;
 
 
-      document.getElementById("user_para").innerHTML = "Welcome User : " + email_id;
+      }, function (errorObject) {
+        console.log("The read failed: " + errorObject.code);
+      });
+
 
     }
 
@@ -23,6 +43,10 @@ firebase.auth().onAuthStateChanged(function(user) {
 
     document.getElementById("user_div").style.display = "none";
     document.getElementById("login_div").style.display = "block";
+    document.getElementById("nav").style.display = "none";
+    document.getElementById("word").style.display = "none";
+    document.getElementById("notice").style.display = "block";
+    document.getElementById("greeting").innerHTML="Login";
 
   }
 });

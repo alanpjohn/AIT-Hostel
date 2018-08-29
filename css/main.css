@@ -1713,11 +1713,16 @@
 		position: relative;
 		top: -0.5em;
 	}
+	.user_para{
+		font-weight: 400;
+		color: #fff;
+
+	}
 
 	blockquote {
 		border-left: solid 4px #dbdbdb;
 		font-style: italic;
-		margin: 0 0 2em 0;
+		margin: 2em 0 2em 0;
 		padding: 0.5em 0 0.5em 2em;
 	}
 
@@ -2672,6 +2677,7 @@
 		.button.special {
 			background-color: #6cc091;
 			color: #ffffff !important;
+			margin-top: 1em;
 		}
 
 			input[type="submit"].special:hover,
