@@ -1812,11 +1812,11 @@
 		}
 
 	section.wrapper, article.wrapper {
-		padding: 6em 0;
+		padding: 1em 0;
 	}
 
 		section.wrapper header, article.wrapper header {
-			margin-bottom: 4em;
+			margin-bottom: 1em;
 		}
 
 			section.wrapper header h2, article.wrapper header h2 {
@@ -2489,11 +2489,13 @@
 	.table-wrapper {
 		-webkit-overflow-scrolling: touch;
 		overflow-x: auto;
+		width : 95%;
+
 	}
 
 	table {
 		margin: 0 0 2em 0;
-		width: 100%;
+		width: 90%;
 	}
 
 		table tbody tr {
