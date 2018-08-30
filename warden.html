@@ -1,0 +1,59 @@
+<!DOCTYPE html5>
+<HTML>
+<head>
+  <title>E-WARDEN</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+  <header id="header">
+        <div class="inner">
+          <a href="index.html" class="logo"><strong>E-warden</strong> by AIT</a>
+          <nav id="nav">
+            <a onclick="logout()">Logout</a>
+          </nav>
+          <a href="#navPanel" class="navPanelToggle">G</a>
+        </div>
+      </header>
+
+
+  <section id="banner">
+  <div class="inner">
+        <header><h1 id="greeting">Hello Warden</h1></header>
+    <div class="flex">
+      <div>
+              <h3>Your Notifications</h3>
+              <p >You have <bold id="verification">0</bold> verification requests</p>
+
+              <p >You have <bold id="leave request">0</bold> leave requests</p>
+              <p >You have <bold id="complaints">0</bold> complaint requests</p>
+    </div>
+    <div>
+              <h3>Shortcuts</h3>
+              <button>Verification Manager</button><br>
+              <button>Leave Manager</button><br>
+              <button>Complaint Panel</button><br>
+              <button>Open Room Allotment</button>
+    </div>
+  </div>
+  </section>
+
+
+
+  <!--script--->
+  <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDaK25xpUvBhL_k5Wa_MTiXEY85FmxzAqo",
+      authDomain: "ait-hostel.firebaseapp.com",
+      databaseURL: "https://ait-hostel.firebaseio.com",
+      projectId: "ait-hostel",
+      storageBucket: "ait-hostel.appspot.com",
+      messagingSenderId: "127362585132"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="index.js"></script>
+</body>
+</HTML>
