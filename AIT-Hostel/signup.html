@@ -1,0 +1,99 @@
+<!DOCTYPE html5>
+<html>
+<head>
+  <title>E-WARDEN</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+  <header id="header">
+  				<div class="inner">
+  					<a href="index.html" class="logo"><strong>E-warden</strong> by AIT</a>
+
+  					<a href="#navPanel" class="navPanelToggle"></a>
+  				</div>
+  </header>
+  <section id="banner2"></section>
+  <section id="three" class="wrapper align-center">
+				<div class="inner">
+					<div class="flex flex-2">
+						<article>
+              <div class="image round">
+								<img src="pic01.jpg" alt="Pic 01" />
+							</div>
+
+							<header>
+								<h4>Steps to sign up</h4>
+							</header>
+							<p>Enter valid data into the form<br />submit this and meet the warden<br />the warden will verify your details <br> and add you to the system</p>
+
+						</article>
+						<article>
+              <Form>
+              <label for="email_field">Email</label>
+              <input type="email"  placeholder="Enter Email" id="email_enter" />
+              <label for="password_field">password</label>
+              <input type="password" placeholder="Enter Password" id="password_enter" />
+              <input type="password" placeholder="Confirm Password" id="password_confirm" />
+
+              <label for="name_field">Name</label>
+              <input type="text" placeholder="Enter Your Name" id="name_field"/>
+
+              <label for="regno_field">Registration number</label>
+              <input type="number" placeholder="Enter Your RegNo" id="regno_field"/>
+
+              <label for="branch">Branch</label>
+              <input type="radio" name="branch" id="comp"/>
+              <label for="comp">Comp</label>
+              <input type="radio" name="branch" id="IT"/>
+              <label for="IT">IT</label>
+              <input type="radio" name="branch" id="Mech"/>
+              <label for="Mech">Mech</label>
+              <input type="radio" name="branch" id="E&TC"/>
+              <label for="E&TC">E&TC</label>
+
+              <label for="mobile_field">Mobile number</label>
+              <input type="tel" placeholder="Enter your phone number" id="mobile_field"/>
+
+              <label for="start">date of birth</label>
+              <input type="date" id="start" name="trip"/>
+
+              <label for="father_field">Father's Details</label>
+              <input type="text" placeholder="Enter Your Father's name" id="father_field"/>
+              <input type="text" placeholder="Enter Your Father's rank" id="rank_field"/>
+              <input type="text" placeholder="Enter Your Father's address" id="Faddress_field"/>
+              <input type="number" placeholder="Enter Your Local Guardian's mobile number" id="Fmobile_field"/>
+
+              <label for="LG_field">Local Guardian's Details</label>
+              <input type="text" placeholder="Enter Your Local Guardian's name" id="LG_field"/>
+              <input type="text" placeholder="Enter Your Local Guardian's address" id="LGaddress_field"/>
+              <input type="number" placeholder="Enter Your Local Guardian's mobile number" id="LGmobile_field"/>
+
+            </form><footer>
+								<button onclick="verify()">Send verification request</button>
+							</footer>
+						</article>
+					</div>
+				</div>
+			</section>
+
+
+
+  <!--script--->
+  <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDaK25xpUvBhL_k5Wa_MTiXEY85FmxzAqo",
+      authDomain: "ait-hostel.firebaseapp.com",
+      databaseURL: "https://ait-hostel.firebaseio.com",
+      projectId: "ait-hostel",
+      storageBucket: "ait-hostel.appspot.com",
+      messagingSenderId: "127362585132"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="index.js"></script>
+
+</body>
+</html>
