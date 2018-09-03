@@ -32,7 +32,7 @@ firebase.auth().onAuthStateChanged(function(user) {
       //writeUserData(uid,"Alan",email_id);
      firebasedb.ref(`/users/`+uid).on("value", function(snapshot) {
         console.log(snapshot.val());
-        var name = snapshot.val().username;
+        var name = snapshot.val().name;
         var cat = snapshot.val().category;
       document.getElementById("user_para").innerHTML = "Hi, " + name;
       if(cat == "warden"){
@@ -60,10 +60,11 @@ firebase.auth().onAuthStateChanged(function(user) {
 });
 
 function writeUserData(userId, name, email) {
+  var firebasedb = firebase.database();
   firebase.database().ref('users/' + userId).set({
-    username: name,
+    name: "Alan P John",
     email: email,
-
+    category:"warden",
   });
 }
 
@@ -105,43 +106,59 @@ function noReturnDateReq(){
 }
 
 function submitLeaveRequest(){
-  var leaveRb = document.getElementById("leave_pass");
-  var nightRb = document.getElementById("night_pass");
+  var d = new Date();
+  var user = firebase.auth().currentUser;
+  var userId = user.uid;
+  var firebasedb = firebase.database();
+  firebasedb.ref(`/users/`+userId).on("value", function(snapshot) {
+     console.log(snapshot.val());
+     var name = snapshot.val().name;
+     var branch = snapshot.val().branch;
+     var regno = snapshot.val().regno;
+     var mob = snapshot.val().mobile;
+     var leaveRb = document.getElementById("leave_pass");
+     var nightRb = document.getElementById("night_pass");
 
-  if(leaveRb.checked){
-    var name = document.getElementById("name_field").value;
-    var RegNo = document.getElementById("regno_field").value;
-    var branch;
-    if(document.getElementById("comp").checked){
-      branch = "comp";
-    }else if(document.getElementById("IT").checked){
-      branch = "IT";
-    }else if(document.getElementById("Mech").checked){
-      branch = "Mech";
-    }else if(document.getElementById("E&TC").checked){
-      branch = "E&TC";
-    }
-    var mob = document.getElementById("mobile_field").value;
-    var Fmob = document.getElementById("LGmobile_field").value;
-    var fromDate = document.getElementById("leaving_day").value;
-    var toDate = document.getElementById("return_day").value;
-    var Uaddress = document.getElementById("address").value;
+     if(leaveRb.checked){
+       var Fmob = document.getElementById("LGmobile_field").value;
+       var fromDate = document.getElementById("leaving_day").value;
+       var toDate = document.getElementById("return_day").value;
+       var Uaddress = document.getElementById("address").value;
+       console.log(name+" "+userId+" "+branch+" "+mob+" "+Fmob+" "+fromDate+" "+toDate+" "+Uaddress+" "+'leaveRequest/' + userId);
+       if(Fmob === "" || fromDate === "" || toDate === "" || Uaddress === ""){
+           alert("there's some invalid or missing information , please fill it again properly");
+       }else if(d >= fromDate){
+           alert("the date seems to be invalid , please fill again");
+       }else{
+         firebase.database().ref('leaveRequest/' + userId).set({
+           name: name,
+           regno: regno,
+           Fmob: Fmob,
+           from: fromDate,
+           to: toDate,
+           address: Uaddress,
+           leave:'yes',
+         });
+         alert("your leave request has been submitted");
+         document.getElementById("leave_application").style.display = "none";
 
-    console.log(name+" "+RegNo+" "+branch+" "+mob+" "+Fmob+" "+fromDate+" "+toDate+" "+Uaddress);
-    if(Fmob === "" || fromDate === "" || toDate === "" || Uaddress === "" || branch == null){
-        
-    }else{
+       }
 
-    }
+     }else if(nightRb.checked){
 
-  }else if(nightRb.checked){
+     }
+   }, function (errorObject) {
+     console.log("The read failed: " + errorObject.code);
+   });
 
-  }
 }
 function logout(){
   firebase.auth().signOut();
 }
 
+load(){
+  
+}
 //Amitav your attention here
 function verify(){
 
