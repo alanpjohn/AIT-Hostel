@@ -1,0 +1,168 @@
+<!DOCTYPE html5>
+<HTML>
+<head>
+  <title>E-WARDEN</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+  <header id="header">
+        <div class="inner">
+          <a href="index.html" class="logo"><strong>E-warden</strong> by AIT</a>
+          <nav id="nav">
+            <a href="login.html" onclick="logout()">Logout</a>
+          </nav>
+          <a href="#navPanel" class="navPanelToggle">G</a>
+        </div>
+      </header>
+
+
+  <section id="banner">
+  <div class="inner">
+        <header><h1 id="greeting">Hello Warden</h1></header>
+    <div class="flex">
+      <div>
+              <h3>Your Notifications</h3>
+              <p >You have <bold id="verification">0</bold> verification requests</p>
+
+              <p >You have <bold id="leave request">0</bold> leave requests</p>
+              <p >You have <bold id="complaints">0</bold> complaint requests</p>
+    </div>
+    <div>
+              <h3>Shortcuts</h3>
+              <a href="#verifier" class = "button">Verification Manager</a><br>
+              <a href="#Leave" class = "button">Leave Manager</a><br>
+              <a href="#Complaint" class = "button">Complaint Panel</a><br>
+              <button>Open Room Allotment</button>
+    </div>
+  </div>
+  </section>
+
+  <section id="verifier" class="wrapper">
+				<div class="inner">
+          <center><h4>Verify member requests</h4></center>
+          <hr class="major">
+					<div class="row 200%">
+						<div class="6u 12u$(medium)">
+              <div class="table-wrapper">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>RegNo</th>
+                      <th>Name</th>
+                      <th>time</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td colspan="3"><italic>No new entries</italic></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="6u$ 12u$(medium)">
+              <div class="Box">
+                Name<br>
+                Email<br>
+                RegNo<br>
+                <button>Verified</button>
+                <button>Delete</button>
+                <button>Edit</button>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <a href="#header" ><center>Go to Top</center></a>
+			</div>
+	</section>
+
+  <section id="Leave" class="wrapper">
+				<div class="inner">
+          <center><h4>Leave requests</h4></center>
+          <hr class="major">
+					<div class="row 200%">
+						<div class="6u 12u$(medium)">
+              <div class="table-wrapper">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>RegNo</th>
+                      <th>Name</th>
+                      <th>RoomNo.</th>
+                      <th>leave/nightout</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td colspan="4"><italic>No new entries</italic></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="6u$ 12u$(medium)">
+              <div class="Box">
+                Name<br>
+                RegNo<br>
+                <button>Approve</button>
+                <button>Deny</button>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <a href="#header" ><center>Go to Top</center></a>
+			</div>
+
+	</section>
+
+
+  <section id="Complaint" class="wrapper">
+        <div class="inner">
+          <center><h4>Complaints</h4></center>
+          <hr class="major">
+          <div class="row">
+            <div class="table-wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    <th>RegNo</th>
+                    <th>Name</th>
+                    <th>RoomNo.</th>
+                    <th>Category</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td colspan="5"><italic>No new entries (that seems unlikley)</italic></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+          <hr>
+          <a href="#header"><center>Go to Top</center></a>
+      </div>
+  </section>
+
+  <!--script--->
+  <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDaK25xpUvBhL_k5Wa_MTiXEY85FmxzAqo",
+      authDomain: "ait-hostel.firebaseapp.com",
+      databaseURL: "https://ait-hostel.firebaseio.com",
+      projectId: "ait-hostel",
+      storageBucket: "ait-hostel.appspot.com",
+      messagingSenderId: "127362585132"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="index.js"></script>
+</body>
+</HTML>
