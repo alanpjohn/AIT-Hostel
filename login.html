@@ -45,8 +45,8 @@
       <h3 >Welcome User</h3>
       <p id="user_para">Welcome to Firebase web login Example. You're currently logged in.</p>
 
-          <button onclick="logout()" class="special">Apply for Leave</button><br>
-          <button onclick="logout()" class="special">Complaints</button><br>
+          <button onclick="showLeavePanel()" class="special">Apply for Leave</button><br>
+          <button onclick="showComplaintPanel()" class="special">Complaints</button><br>
           <button onclick="logout()" class="special">Room Allotment</button><br>
         </center>
     </div>
@@ -74,7 +74,46 @@
 
 <section id="leave_application" class = "wrapper">
   <div class="inner">
+    <div class="row">
+      <div class="box">
 
+        <label for="leave_category">Leave or nightout ?</label>
+        <input type="radio" name="leave_category" id="leave_pass" onclick="returnDateReq()"/>
+        <label for="leave_pass">Leave</label>
+        <input type="radio" name="leave_category" id="night_pass" onclick="noReturnDateReq()"/>
+        <label for="night_pass">Nightout</label>
+
+        <label for="name_field">Name</label>
+        <input type="text"  placeholder="Enter name" id="name_field" />
+        <label for="regno_field">Registration number</label>
+        <input type="number" placeholder="Enter Your RegNo" id="regno_field"/>
+
+        <label for="branch">Branch</label>
+        <input type="radio" name="branch" id="comp"/>
+        <label for="comp">Comp</label>
+        <input type="radio" name="branch" id="IT"/>
+        <label for="IT">IT</label>
+        <input type="radio" name="branch" id="Mech"/>
+        <label for="Mech">Mech</label>
+        <input type="radio" name="branch" id="E&TC"/>
+        <label for="E&TC">E&TC</label>
+
+        <label for="mobile_field">Mobile number</label>
+        <input type="tel" placeholder="Enter your phone number" id="mobile_field"/>
+
+        <label for="mobile_field">Parent's/Local Guardian's Mobile number</label>
+        <input type="tel" placeholder="Enter local Guardian/parent phone number" id="LGmobile_field"/>
+
+        <label for="leaving_day">From</label>
+        <input type="date" id="leaving_day" name="trip"/>
+        <label for="return_day" id="returnLabel">To</label>
+        <input type="date" id="return_day" name="trip"/>
+
+        <label for="address">address</label>
+        <textarea  placeholder="Enter address" id="address"></textarea>
+        <button class = "fix" onclick="submitLeaveRequest()">Submit</button>
+      </div>
+    </div>
   </div>
 </section>
 

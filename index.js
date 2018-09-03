@@ -84,13 +84,65 @@ function login(){
 
 }
 
+function showComplaintPanel(){
+  document.getElementById("leave_application").style.display = "none";
+  document.getElementById("addComplaint").style.display = "block";
+}
+
+function showLeavePanel(){
+  document.getElementById("leave_application").style.display = "block";
+  document.getElementById("addComplaint").style.display = "none";
+}
+
+function returnDateReq(){
+  document.getElementById("return_day").style.display = "block";
+  document.getElementById("returnLabel").style.display = "block";
+}
+
+function noReturnDateReq(){
+    document.getElementById("return_day").style.display = "none";
+    document.getElementById("returnLabel").style.display = "none";
+}
+
+function submitLeaveRequest(){
+  var leaveRb = document.getElementById("leave_pass");
+  var nightRb = document.getElementById("night_pass");
+
+  if(leaveRb.checked){
+    var name = document.getElementById("name_field").value;
+    var RegNo = document.getElementById("regno_field").value;
+    var branch;
+    if(document.getElementById("comp").checked){
+      branch = "comp";
+    }else if(document.getElementById("IT").checked){
+      branch = "IT";
+    }else if(document.getElementById("Mech").checked){
+      branch = "Mech";
+    }else if(document.getElementById("E&TC").checked){
+      branch = "E&TC";
+    }
+    var mob = document.getElementById("mobile_field").value;
+    var Fmob = document.getElementById("LGmobile_field").value;
+    var fromDate = document.getElementById("leaving_day").value;
+    var toDate = document.getElementById("return_day").value;
+    var Uaddress = document.getElementById("address").value;
+
+    console.log(name+" "+RegNo+" "+branch+" "+mob+" "+Fmob+" "+fromDate+" "+toDate+" "+Uaddress);
+    if(Fmob === "" || fromDate === "" || toDate === "" || Uaddress === "" || branch == null){
+        
+    }else{
+
+    }
+
+  }else if(nightRb.checked){
+
+  }
+}
 function logout(){
   firebase.auth().signOut();
 }
 
-
 //Amitav your attention here
 function verify(){
-
 
 }
