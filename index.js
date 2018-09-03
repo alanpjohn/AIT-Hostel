@@ -157,9 +157,8 @@ function logout(){
 }
 
 load(){
-  
+
 }
-//Amitav your attention here
 function verify(){
 
 }
