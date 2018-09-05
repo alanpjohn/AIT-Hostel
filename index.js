@@ -156,9 +156,10 @@ function logout(){
   firebase.auth().signOut();
 }
 
-load(){
-
+function load(){
+  
 }
+
 function verify(){
 
 }
