@@ -33,17 +33,18 @@
               <label for="email_field">Email</label>
               <input type="email"  placeholder="Enter Email" id="email_enter" />
               <label for="password_field">password</label>
-              <input type="password" placeholder="Enter Password" id="password_enter" />
+              <input type="password" placeholder="Enter Password" id="password_enter" title="Password must contain at least one digit, uppercase and lowercase letter, and at least 8 or more characters" required/>
               <input type="password" placeholder="Confirm Password" id="password_confirm" />
+              <!--input type="password" id="password_enter" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required-->
 
               <label for="name_field">Name</label>
               <input type="text" placeholder="Enter Your Name" id="name_field"/>
 
               <label for="regno_field">Registration number</label>
-              <input type="number" placeholder="Enter Your RegNo" id="regno_field"/>
+              <input type="text" placeholder="Enter Your RegNo" id="regno_field"/>
 
               <label for="branch">Branch</label>
-              <input type="radio" name="branch" id="comp"/>
+              <input type="radio" name="branch" id="comp" checked/>
               <label for="comp">Comp</label>
               <input type="radio" name="branch" id="IT"/>
               <label for="IT">IT</label>
@@ -53,21 +54,21 @@
               <label for="E&TC">E&TC</label>
 
               <label for="mobile_field">Mobile number</label>
-              <input type="tel" placeholder="Enter your phone number" id="mobile_field"/>
+              <input type="text" placeholder="Enter your phone number" id="mobile_field"/>
 
-              <label for="start">date of birth</label>
-              <input type="date" id="start" name="trip"/>
+              <label for="birth_date">date of birth</label>
+              <input type="date" id="birth_date" name="trip"/>
 
               <label for="father_field">Father's Details</label>
               <input type="text" placeholder="Enter Your Father's name" id="father_field"/>
               <input type="text" placeholder="Enter Your Father's rank" id="rank_field"/>
               <input type="text" placeholder="Enter Your Father's address" id="Faddress_field"/>
-              <input type="number" placeholder="Enter Your Father's mobile number" id="Fmobile_field"/>
+              <input type="text" placeholder="Enter Your Father's mobile number" id="Fmobile_field"/>
 
-              <label for="LG_field">Local Guardian's Details</label>
+              <label for="LG_field">Local Guardian's Details<sub>(if any)</sub></label>
               <input type="text" placeholder="Enter Your Local Guardian's name" id="LG_field"/>
               <input type="text" placeholder="Enter Your Local Guardian's address" id="LGaddress_field"/>
-              <input type="number" placeholder="Enter Your Local Guardian's mobile number" id="LGmobile_field"/>
+              <input type="text" placeholder="Enter Your Local Guardian's mobile number" id="LGmobile_field"/>
 
             </form><footer>
 								<button onclick="verify()">Send verification request</button>
