@@ -6,7 +6,6 @@
   <link rel="stylesheet" href="main.css" />
 </head>
 <body>
-  <script>Load();</script>
   <header id="header">
         <div class="inner">
           <a href="index.html" class="logo"><strong>E-warden</strong> by AIT</a>
@@ -25,7 +24,6 @@
       <div>
               <h3>Your Notifications</h3>
               <p >You have <bold id="verification">0</bold> verification requests</p>
-
               <p >You have <bold id="leave request">0</bold> leave requests</p>
               <p >You have <bold id="complaints">0</bold> complaint requests</p>
     </div>
@@ -46,7 +44,7 @@
 					<div class="row 200%">
 						<div class="6u 12u$(medium)">
               <div class="table-wrapper">
-                <table>
+                <table id="Vtable">
                   <thead>
                     <tr>
                       <th>RegNo</th>
@@ -65,9 +63,19 @@
 
             <div class="6u$ 12u$(medium)">
               <div class="Box">
-                Name<br>
-                Email<br>
-                RegNo<br>
+                <p id = "Vname"></p>
+                <p id = "Vregno"></p>
+                <p id = "Vbranch"></p>
+                <p id = "Vemail"></p>
+                <p id = "Vdob"></p>
+                <p id = "VFname"></p>
+                <p id = "VFrank"></p>
+                <p id = "VFmob"></p>
+                <p id = "VFadd"></p>
+                <p id = "VLGname"></p>
+                <p id = "VLGmob"></p>
+                <p id = "VLadd"></p>
+
                 <button>Verified</button>
                 <button>Delete</button>
                 <button>Edit</button>
@@ -164,6 +172,6 @@
     };
     firebase.initializeApp(config);
   </script>
-  <script src="index.js"></script>
+  <script src="wardenindex.js"></script>
 </body>
 </HTML>
