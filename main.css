@@ -2750,7 +2750,7 @@
 			position: fixed;
 		}
 
-	#header {
+	#header , #dlgheader{
 		color: #fff;
 		cursor: default;
 		height: 3.25em;
@@ -2961,7 +2961,7 @@
 			}
 
 /* Banner2*/
-#banner2 {
+#banner2,#dlgbody {
 	padding: 5em 0 2em 0;
 	background-image: url(banner.jpg);
 	background-size: cover;
@@ -3203,7 +3203,7 @@
 
 /* Footer */
 
-	#footer {
+	#footer,#dlgfooter {
 		padding: 6em 0;
 		background: #6cc091;
 		color: #fff;
@@ -3250,4 +3250,23 @@
 				padding: 3em 0;
 			}
 
-}
+		}
+
+		#dlgbox {
+			width: 24%;
+			height: 8em;
+			margin-top: 2em;
+			margin-left: 38%;
+			position: fixed;
+			z-index: 1000000;
+			display:none;
+		}
+
+		#whiteBG {
+			background-color: #Fefefe;
+			opacity: 0.7;
+			display: none;
+			z-index: 99999;
+			width: 100%;
+			height: 100%;
+		}
