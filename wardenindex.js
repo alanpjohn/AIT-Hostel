@@ -1,10 +1,30 @@
 var Vindex=0;
 var VSindex=1;
 var Vtotal=0;
+var wardenEmail;
+var flag = 0;
+var wardenPass;
 var Vtable=document.getElementById("Vtable");
+
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
-    if(user != null){
+    if(user != null && flag == 0){
+      var email_id = user.email;
+      var uid = user.uid;
+      firebasedb.ref(`/users/`+uid).on("value", function(snapshot) {
+        console.log(snapshot.val());
+        var cat = snapshot.val().category;
+        if(cat != "warden"){
+          logout();
+          window.alert("Unauthorised access");
+        }else{
+          wardenEmail = email_id;
+        }
+
+      }, function (errorObject) {
+        console.log("The read failed: " + errorObject.code);
+      });
+    }else if(user != null && flag == 1){
 
     }
 
@@ -59,20 +79,54 @@ function addUser(){
   var snapshot;
   var pref = firebasedb.ref('verificationRequest/' + regNo);
   pref.on(`value`,function(data){
-    console.log(data.val());
+    //console.log(data.val());
     snapshot = data.val();
   });
+  console.log(snapshot);
+  var email = snapshot.email;
+  var password = "Ewarden";
   firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
 
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
+    window.alert("Failed to make account\n"+errorMessage);
   });
+  flag = 1;
+  firebase.auth().signInWithEmailAndPassword(email,password).catch(function(error){
+
+  });
+
+  var user = firebase.auth().currentUser;
+  var uid = user.uid;
+  firebase.database().ref(`users/`+uid).set({
+    name: snapshot.name,
+    email: email,
+    category:"student",
+    Dob : snapshot.dob,
+    branch : snapshot.branch,
+    mobile : snapshot.mobile,
+    regno : snapshot.regno,
+    Father : snapshot.Father,
+    Father_address : snapshot.Father_address,
+    Father_rank : snapshot.Father_rank,
+    Father_mob : snapshot.Father_mob,
+    Local_Guardian : snapshot.Local_Guardian,
+    Local_Guardian_mob : snapshot.Local_Guardian_mob,
+    Local_Guardian_address : snapshot.Local_Guardian_address,
+  });
+  flag = 0;
+  firebase.auth().signInWithEmailAndPassword(wardenEmail,wardenPass).catch(function(error){
+
+  });
+
+
 
 }
 
 function logout(){
   firebase.auth().signOut();
+  window.open("login.html","_self");
 }
   /*
 

@@ -11,8 +11,6 @@
             <div class="inner">
               <a href="index.html" class="logo"><strong>E-warden</strong> by AIT</a>
               <nav id="nav">
-                <a href="index.html">Account</a>
-                <a href="generic.html">FAQ</a>
                 <a onclick="logout()">Logout</a>
               </nav>
               <a href="#navPanel" class="navPanelToggle"></a>
@@ -21,30 +19,27 @@
 
 
 		<!-- Banner -->
-			<section id="banner">
+			<section id="banner3">
 				<div class="inner">
 					<header>
-						<h1>Welcome to Projection</h1>
+						<h1>Room Allotment</h1>
 					</header>
 
 					<div class="flex ">
 
 						<div>
-							<span class="icon fa-car"></span>
-							<h3>Aliquam</h3>
-							<p>Suspendisse amet ullamco</p>
+							<h3>24</h3>
+							<p>Single rooms</p>
 						</div>
 
 						<div>
-							<span class="icon fa-camera"></span>
-							<h3>Elementum</h3>
-							<p>Class aptent taciti ad litora</p>
+							<h3>10</h3>
+							<p>Double rooms</p>
 						</div>
 
 						<div>
-							<span class="icon fa-bug"></span>
-							<h3>Ultrices</h3>
-							<p>Nulla vitae mauris non felis</p>
+							<h3>30</h3>
+							<p>triple rooms</p>
 						</div>
 
 					</div>
@@ -55,6 +50,64 @@
 				</div>
 			</section>
 
+      <!-- main body -->
+
+      <section id="verifier" class="wrapper">
+            <div class="inner">
+              <center><h4>Add your preferences</h4><br>
+              <p id="bypassflag">Allow any of my preferred roommates with higher merit to bypass my preference</p>
+              </center>
+
+              <hr class="major">
+                <div class="inner">
+                  <div class="table-wrapper">
+                    <center>
+                    <table id="Vtable">
+                      <thead>
+                        <tr>
+                          <th>preference number</th>
+                          <th>room type</th>
+                          <th>move</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>Singlet</td>
+                          <td><button class="special">move up</button><button class="special">move down</button></td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>Random Doublet</td>
+                          <td><button class="special">move up</button><button class="special">move down</button></td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>Random Triplet</td>
+                          <td><button class="special">move up</button><button class="special">move down</button></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <input type="checkbox" name="overrideflag" >
+                    <label for="overrideflag">Allow people other than preferred roommates to chose me as their roommate</label>
+                  </center>
+                  </div>
+
+                <div class="inner">
+                  <div class="Box" id="allotDetails">
+
+                    <p id = "Dname"></p>
+                    <center>
+                    <button >Submit</button>
+                    <button >Edit</button>
+                  </center>
+                  </div>
+                </div>
+              </div>
+              <hr>
+              <a href="#header" ><center>Go to Top</center></a>
+          </div>
+      </section>
 
 
 
@@ -72,6 +125,7 @@
     };
     firebase.initializeApp(config);
   </script>
+  <script src="roomindex.js"></script>
 
 </body>
 
