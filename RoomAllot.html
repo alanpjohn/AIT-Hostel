@@ -5,7 +5,7 @@
   <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
   <link rel="stylesheet" href="main.css" />
 </head>
-<body>
+<body onload="uncheck()">
   <!-- Header -->
     <header id="header">
             <div class="inner">
@@ -72,28 +72,27 @@
                       <tbody>
                         <tr>
                           <td>1</td>
-                          <td colspan="2">In Case of Preference Conflict with <strong>Preferred Roommate</strong>, consider the Preference of student with Higher Merit</td>
-                          <!--In case the checkbox below is checked, "Preffered Roommate" to be swapped by "Anyone" -->
+                          <td colspan="2">In Case of Preference Conflict with <strong><span id="pOverridden">Preferred Roommate</span></strong>, consider the Preference of student with Higher Merit</td>
                         </tr>
                         <tr>
                           <td>2</td>
                           <td>Singlet</td>
-                          <td><button class="special">move up</button><button class="special">move down</button></td>
+                          <td><button class="special" style="visibility:hidden">move up</button> <button class="special">move down</button></td>
                         </tr>
                         <tr>
                           <td>3</td>
                           <td>Random Doublet</td>
-                          <td><button class="special">move up</button><button class="special">move down</button></td>
+                          <td><button class="special">move up</button> <button class="special">move down</button></td>
                         </tr>
                         <tr>
                           <td>4</td>
                           <td>Random Triplet</td>
-                          <td><button class="special">move up</button><button class="special">move down</button></td>
+                          <td><button class="special">move up</button> <button class="special" style="visibility:hidden">move down</button></td>
                         </tr>
                       </tbody>
                     </table>
-                    <input type="checkbox" name="overrideflag" >
-                    <label for="overrideflag">Allow people other than preferred roommates to chose me as their roommate</label>
+                    <input type="checkbox" id="overrideflag" onclick="pChanger()" checked="checked">
+                    <label for="overrideflag">Allow anyone with Higher Merit to choose me as their Roommate</label>
                   </center>
                   </div>
 
