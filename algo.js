@@ -18,8 +18,8 @@ function extract(regno){
 
 //how the value of attributes of node are set
 function finalize(room){
-  firebase.database().ref('/' + room).set({
+  firebase.database().ref('rooms/' + room).set({
     capacity : 3,
-    occ1: 17123
+    occ2: 17123
   });
 }
