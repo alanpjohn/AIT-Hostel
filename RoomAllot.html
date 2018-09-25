@@ -11,7 +11,7 @@
             <div class="inner">
               <a href="index.html" class="logo"><strong>E-warden</strong> by AIT</a>
               <nav id="nav">
-                <a onclick="logout()">Logout</a>
+                <a href="login.html">Home</a>
               </nav>
               <a href="#navPanel" class="navPanelToggle"></a>
             </div>
@@ -45,7 +45,7 @@
 					</div>
 
 					<footer>
-						<a href="#" class="button">Get Started</a>
+						<a href="#" class="button">Add preferences</a>
 					</footer>
 				</div>
 			</section>
@@ -54,14 +54,14 @@
 
       <section id="verifier" class="wrapper">
             <div class="inner">
-              <center><h4>Add your preferences</h4>
+              <center><h4>Confirm your preferences</h4>
               </center>
 
               <hr class="major">
                 <div class="inner">
                   <div class="table-wrapper">
                     <center>
-                    <table id="Vtable">
+                    <table id="Vtable" >
                       <thead>
                         <tr>
                           <th>Preference Number</th>
@@ -74,7 +74,7 @@
                           <td>1</td>
                           <td colspan="2">In Case of Preference Conflict with <strong><span id="pOverridden">Preferred Roommate</span></strong>, consider the Preference of student with Higher Merit</td>
                         </tr>
-                        <tr>
+                        <tr onclick="showDetails()">
                           <td>2</td>
                           <td>Singlet</td>
                           <td><button class="special" style="visibility:hidden">move up</button> <button class="special">move down</button></td>
@@ -99,10 +99,10 @@
                 <div class="inner">
                   <div class="Box" id="allotDetails">
 
-                    <p id = "Dname"></p>
+                    <p id = "Dname">Singlet</p>
                     <center>
-                    <button >Submit</button>
-                    <button >Edit</button>
+                    <button >Confirm</button>
+                    <button onclick="hideDetails()">Close</button>
                   </center>
                   </div>
                 </div>

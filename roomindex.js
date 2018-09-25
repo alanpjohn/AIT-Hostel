@@ -24,3 +24,11 @@ function pChanger(){
   var state = document.getElementById("overrideflag");
     document.getElementById("pOverridden").innerHTML = (state.checked)? "Anyone":"Preferred Roommate";
 }
+
+function showDetails(){
+  document.getElementById("allotDetails").style.display = "block";
+}
+
+function hideDetails(){
+  document.getElementById("allotDetails").style.display = "none";
+}
