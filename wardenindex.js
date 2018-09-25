@@ -93,13 +93,11 @@ function addUser(){
     window.alert("Failed to make account\n"+errorMessage);
   });
   flag = 1;
-  firebase.auth().signInWithEmailAndPassword(email,password).catch(function(error){
 
   });
 
-  var user = firebase.auth().currentUser;
-  var uid = user.uid;
-  firebase.database().ref(`users/`+uid).set({
+
+  firebase.database().ref(`students/`+regNo).set({
     name: snapshot.name,
     email: email,
     category:"student",
@@ -116,7 +114,6 @@ function addUser(){
     Local_Guardian_address : snapshot.Local_Guardian_address,
   });
   flag = 0;
-  firebase.auth().signInWithEmailAndPassword(wardenEmail,wardenPass).catch(function(error){
 
   });
 

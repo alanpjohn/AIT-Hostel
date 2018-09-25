@@ -1,3 +1,4 @@
+var regno;
 firebase.auth().onAuthStateChanged(function(user) {
 
   if (user) {
@@ -36,6 +37,8 @@ firebase.auth().onAuthStateChanged(function(user) {
       document.getElementById("user_para").innerHTML = "Hi there";
       if(cat == "warden"){
         window.open("warden.html" , "_self");
+      }else{
+        regno = snapshot.val().regno;
       }
 
       }, function (errorObject) {
@@ -111,11 +114,10 @@ function submitLeaveRequest(){
   var user = firebase.auth().currentUser;
   var userId = user.uid;
   var firebasedb = firebase.database();
-  firebasedb.ref(`/users/`+userId).on("value", function(snapshot) {
+  firebasedb.ref(`/students/`+regno).on("value", function(snapshot) {
      console.log(snapshot.val());
      var name = snapshot.val().name;
      var branch = snapshot.val().branch;
-     var regno = snapshot.val().regno;
      var mob = snapshot.val().mobile;
      var leaveRb = document.getElementById("leave_pass");
      var nightRb = document.getElementById("night_pass");
@@ -131,7 +133,7 @@ function submitLeaveRequest(){
        }else if(d >= fromDate){
            alert("the date seems to be invalid , please fill again");
        }else{
-         firebase.database().ref('leaveRequest/' + userId).set({
+         firebase.database().ref('leaveRequest/' + regno).set({
            name: name,
            regno: regno,
            Fmob: Fmob,
