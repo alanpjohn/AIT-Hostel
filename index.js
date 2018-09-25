@@ -32,9 +32,8 @@ firebase.auth().onAuthStateChanged(function(user) {
       //writeUserData(uid,"Alan",email_id);
      firebasedb.ref(`/users/`+uid).on("value", function(snapshot) {
         console.log(snapshot.val());
-        var name = snapshot.val().name;
         var cat = snapshot.val().category;
-      document.getElementById("user_para").innerHTML = "Hi, " + name;
+      document.getElementById("user_para").innerHTML = "Hi there";
       if(cat == "warden"){
         window.open("warden.html" , "_self");
       }
